@@ -10,3 +10,20 @@ I did these commands:
 * `touch localfile`
 * I then pasted some lorem ipsum text into localfile
 * `hdfs dfs -appendToFile localfile /user/cloudera/adam/shakespeare.txt`
+
+## Lesson 2 ICP
+For items 1 and 2, I added the code for the WordCount.jar and exported it. I created the necessary text input files.
+I did these commands:
+* `hdfs dfs -put wordcount.txt input/`
+* `hadoop jar /home/cloudera/adam/WordCount.jar input/wordcount.txt output`
+* `hdfs dfs -ls output`
+* `hdfs dfs -cat output/part-r-00000`
+This displayed the whole word list. To display just the A words, I used grep:
+* `hdfs dfs -cat output/part-r-00000 | grep -E '\ba'`
+
+For the bonus item, I made a new java class, copied in the WordCount file, and edited the Tokenizer to check for primes when writing to the file.
+The file is in this repo under 'Lesson 2'. I then ran these commands:
+* `hdfs dfs -put numbers.txt input/`
+* `hadoop jar /home/cloudera/adam/PrimeCount.jar input/numbers.txt output-num`
+* `hdfs dfs -ls output-num`
+* `hdfs dfs -cat output-num/part-r-00000`
