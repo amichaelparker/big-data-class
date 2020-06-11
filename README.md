@@ -18,8 +18,11 @@ I did these commands:
 * `hadoop jar /home/cloudera/adam/WordCount.jar input/wordcount.txt output`
 * `hdfs dfs -ls output`
 * `hdfs dfs -cat output/part-r-00000`
-This displayed the whole word list. To display just the A words, I used grep:
-* `hdfs dfs -cat output/part-r-00000 | grep -E '\ba'`
+
+For item 2, I made a new code file, ACount.jar. It is also under the lesson 2 folder.
+* `hadoop jar /home/cloudera/adam/ACount.jar input/wordcount.txt output-a`
+* `hdfs dfs -ls output-a`
+* `hdfs dfs -cat output-a/part-r-00000`
 
 For the bonus item, I made a new java class, copied in the WordCount file, and edited the Tokenizer to check for primes when writing to the file.
 The file is in this repo under 'Lesson 2'. I then ran these commands:
