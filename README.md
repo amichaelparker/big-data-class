@@ -30,3 +30,12 @@ The file is in this repo under 'Lesson 2'. I then ran these commands:
 * `hadoop jar /home/cloudera/adam/PrimeCount.jar input/numbers.txt output-num`
 * `hdfs dfs -ls output-num`
 * `hdfs dfs -cat output-num/part-r-00000`
+
+## Lesson 3 ICP
+I created the necessary files (found in the MatrixMultiplication folder here), and exported the project as a jar. I created the input files and copied them all to the cloudera VM.
+I did these commands:
+* `hdfs dfs -put M /home/cloudera/input/`
+* `hdfs dfs -put N /home/cloudera/input/`
+* `hadoop jar MatrixMultiplication.jar MatrixMultiplication /home/cloudera/input /home/cloudera/output`
+* `hdfs dfs -ls /home/cloudera/output`
+* `hdfs dfs -cat /home/cloudera/output/part-r-00000`
