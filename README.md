@@ -39,3 +39,5 @@ I did these commands:
 * `hadoop jar MatrixMultiplication.jar MatrixMultiplication /home/cloudera/input /home/cloudera/output`
 * `hdfs dfs -ls /home/cloudera/output`
 * `hdfs dfs -cat /home/cloudera/output/part-r-00000`
+
+![image](https://i.imgur.com/8V8QTuy.png)
